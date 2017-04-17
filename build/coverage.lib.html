@@ -1,5 +1,7 @@
-<html lang="en"><head>
-    <title>Code coverage report for node-npmtest-gulp-gh-pages/gulp-gh-pages/lib/git.js</title>
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for node-npmtest-gulp-gh-pages/node_modules/gulp-gh-pages/lib/git.js</title>
     <meta charset="utf-8">
     <style>
         body, html {
@@ -192,7 +194,7 @@
     <h1 style="font-weight: bold;">
         <a href="https://github.com/npmtest/node-npmtest-gulp-gh-pages">npmtest-gulp-gh-pages (v0.0.1)</a>
     </h1>
-    <h1>Code coverage report for <span class="entity">node-npmtest-gulp-gh-pages/gulp-gh-pages/lib/git.js</span></h1>
+    <h1>Code coverage report for <span class="entity">node-npmtest-gulp-gh-pages/node_modules/gulp-gh-pages/lib/git.js</span></h1>
     <h2>
         
         Statements: <span class="metric">16.67% <small>(21 / 126)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
@@ -208,11 +210,11 @@
         
         Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
     </h2>
-    <div class="path"><a href="../../../index.html">All files</a> » <a href="index.html">node-npmtest-gulp-gh-pages/gulp-gh-pages/lib/</a> » git.js</div>
+    <div class="path"><a href="../../../../index.html">All files</a> &#187; <a href="index.html">node-npmtest-gulp-gh-pages/node_modules/gulp-gh-pages/lib/</a> &#187; git.js</div>
 </div>
 <div class="body">
 <pre><table class="coverage">
-<tbody><tr><td class="line-count">1
+<tr><td class="line-count">1
 2
 3
 4
@@ -763,48 +765,48 @@ var wrapPromise = require('wrap-promise');
 /*
  * Git Constructor
 **/
-<span class="fstat-no" title="function not covered">function Git(repo, initialBranch) {</span>
-<span class="cstat-no" title="statement not covered">  this._repo = repo;</span>
-<span class="cstat-no" title="statement not covered">  this._staged = [];</span>
-<span class="cstat-no" title="statement not covered">  this._localBranches = [];</span>
-<span class="cstat-no" title="statement not covered">  this._remoteBranches = [];</span>
-<span class="cstat-no" title="statement not covered">  this._currentBranch = initialBranch;</span>
-<span class="cstat-no" title="statement not covered">  this._commits = [];</span>
+<span class="fstat-no" title="function not covered" >function Git(repo, initialBranch) {</span>
+<span class="cstat-no" title="statement not covered" >  this._repo = repo;</span>
+<span class="cstat-no" title="statement not covered" >  this._staged = [];</span>
+<span class="cstat-no" title="statement not covered" >  this._localBranches = [];</span>
+<span class="cstat-no" title="statement not covered" >  this._remoteBranches = [];</span>
+<span class="cstat-no" title="statement not covered" >  this._currentBranch = initialBranch;</span>
+<span class="cstat-no" title="statement not covered" >  this._commits = [];</span>
 }
 &nbsp;
 /*
  * Caller abstract method
  * for promisifying traditional callback methods
 **/
-<span class="fstat-no" title="function not covered">function caller() {</span>
-<span class="cstat-no" title="statement not covered">  var returnedArgs = Array.prototype.slice.call(arguments);</span>
-<span class="cstat-no" title="statement not covered">  var fn = returnedArgs.shift();</span>
-<span class="cstat-no" title="statement not covered">  var self = this;</span>
+<span class="fstat-no" title="function not covered" >function caller() {</span>
+<span class="cstat-no" title="statement not covered" >  var returnedArgs = Array.prototype.slice.call(arguments);</span>
+<span class="cstat-no" title="statement not covered" >  var fn = returnedArgs.shift();</span>
+<span class="cstat-no" title="statement not covered" >  var self = this;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">  return wrapPromise(<span class="fstat-no" title="function not covered">function(resolve, reject) {</span></span>
-<span class="cstat-no" title="statement not covered">    returnedArgs.push(<span class="fstat-no" title="function not covered">function(err, args) {</span></span>
-<span class="cstat-no" title="statement not covered">      if (err) {</span>
-<span class="cstat-no" title="statement not covered">        reject(err);</span>
-<span class="cstat-no" title="statement not covered">        return;</span>
+<span class="cstat-no" title="statement not covered" >  return wrapPromise(<span class="fstat-no" title="function not covered" >function(resolve, reject) {</span></span>
+<span class="cstat-no" title="statement not covered" >    returnedArgs.push(<span class="fstat-no" title="function not covered" >function(err, args) {</span></span>
+<span class="cstat-no" title="statement not covered" >      if (err) {</span>
+<span class="cstat-no" title="statement not covered" >        reject(err);</span>
+<span class="cstat-no" title="statement not covered" >        return;</span>
       }
-<span class="cstat-no" title="statement not covered">      resolve(args);</span>
+<span class="cstat-no" title="statement not covered" >      resolve(args);</span>
     });
 &nbsp;
-<span class="cstat-no" title="statement not covered">    fn.apply(self, returnedArgs);</span>
+<span class="cstat-no" title="statement not covered" >    fn.apply(self, returnedArgs);</span>
   });
 }
 &nbsp;
 /*
  * Gets the URL for the specified remote of a repo
  */
-<span class="fstat-no" title="function not covered">function getRemoteUrl(repo, remote) {</span>
-<span class="cstat-no" title="statement not covered">  return wrapPromise(<span class="fstat-no" title="function not covered">function(resolve, reject) {</span></span>
-<span class="cstat-no" title="statement not covered">    repo.config(<span class="fstat-no" title="function not covered">function(err, config) {</span></span>
-<span class="cstat-no" title="statement not covered">      if (err) {</span>
-<span class="cstat-no" title="statement not covered">        reject(new Error('Failed to find git repository in ' + config.path));</span>
-<span class="cstat-no" title="statement not covered">        return;</span>
+<span class="fstat-no" title="function not covered" >function getRemoteUrl(repo, remote) {</span>
+<span class="cstat-no" title="statement not covered" >  return wrapPromise(<span class="fstat-no" title="function not covered" >function(resolve, reject) {</span></span>
+<span class="cstat-no" title="statement not covered" >    repo.config(<span class="fstat-no" title="function not covered" >function(err, config) {</span></span>
+<span class="cstat-no" title="statement not covered" >      if (err) {</span>
+<span class="cstat-no" title="statement not covered" >        reject(new Error('Failed to find git repository in ' + config.path));</span>
+<span class="cstat-no" title="statement not covered" >        return;</span>
       }
-<span class="cstat-no" title="statement not covered">      resolve(config.items['remote.' + remote + '.url']);</span>
+<span class="cstat-no" title="statement not covered" >      resolve(config.items['remote.' + remote + '.url']);</span>
     });
   });
 }
@@ -813,58 +815,58 @@ var wrapPromise = require('wrap-promise');
  * Clone repo
  * Returns repo object
 **/
-<span class="fstat-no" title="function not covered">function prepareRepo(remoteUrl, origin, dir) {</span>
-<span class="cstat-no" title="statement not covered">  var promise;</span>
-<span class="cstat-no" title="statement not covered">  if (remoteUrl) {</span>
+<span class="fstat-no" title="function not covered" >function prepareRepo(remoteUrl, origin, dir) {</span>
+<span class="cstat-no" title="statement not covered" >  var promise;</span>
+<span class="cstat-no" title="statement not covered" >  if (remoteUrl) {</span>
     // if a remoteUrl was provided, use it
-<span class="cstat-no" title="statement not covered">    promise = wrapPromise.Promise.resolve(remoteUrl);</span>
+<span class="cstat-no" title="statement not covered" >    promise = wrapPromise.Promise.resolve(remoteUrl);</span>
   } else {
     // else try to extract it from the .git folder of
     // the current directory.
-<span class="cstat-no" title="statement not covered">    promise = getRemoteUrl(git(process.cwd()), origin);</span>
+<span class="cstat-no" title="statement not covered" >    promise = getRemoteUrl(git(process.cwd()), origin);</span>
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered">  return promise.then(<span class="fstat-no" title="function not covered">function(rUrl) {</span></span>
-<span class="cstat-no" title="statement not covered">    remoteUrl = rUrl;</span>
+<span class="cstat-no" title="statement not covered" >  return promise.then(<span class="fstat-no" title="function not covered" >function(rUrl) {</span></span>
+<span class="cstat-no" title="statement not covered" >    remoteUrl = rUrl;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">    return wrapPromise(<span class="fstat-no" title="function not covered">function(resolve, reject) {</span></span>
-<span class="fstat-no" title="function not covered">      function initRepo(repo) {</span>
-<span class="cstat-no" title="statement not covered">        repo.branch(<span class="fstat-no" title="function not covered">function(err, head) {</span></span>
-<span class="cstat-no" title="statement not covered">          if (err) {</span>
-<span class="cstat-no" title="statement not covered">            reject(err);</span>
-<span class="cstat-no" title="statement not covered">            return;</span>
+<span class="cstat-no" title="statement not covered" >    return wrapPromise(<span class="fstat-no" title="function not covered" >function(resolve, reject) {</span></span>
+<span class="fstat-no" title="function not covered" >      function initRepo(repo) {</span>
+<span class="cstat-no" title="statement not covered" >        repo.branch(<span class="fstat-no" title="function not covered" >function(err, head) {</span></span>
+<span class="cstat-no" title="statement not covered" >          if (err) {</span>
+<span class="cstat-no" title="statement not covered" >            reject(err);</span>
+<span class="cstat-no" title="statement not covered" >            return;</span>
           }
-<span class="cstat-no" title="statement not covered">          resolve(new Git(repo, head.name).status());</span>
+<span class="cstat-no" title="statement not covered" >          resolve(new Git(repo, head.name).status());</span>
         });
       }
 &nbsp;
-<span class="fstat-no" title="function not covered">      function clearAndInitRepo() {</span>
-<span class="cstat-no" title="statement not covered">        rimraf(dir, <span class="fstat-no" title="function not covered">function(rmErr) {</span></span>
-<span class="cstat-no" title="statement not covered">          if (rmErr) {</span>
-<span class="cstat-no" title="statement not covered">            reject(rmErr);</span>
-<span class="cstat-no" title="statement not covered">            return;</span>
+<span class="fstat-no" title="function not covered" >      function clearAndInitRepo() {</span>
+<span class="cstat-no" title="statement not covered" >        rimraf(dir, <span class="fstat-no" title="function not covered" >function(rmErr) {</span></span>
+<span class="cstat-no" title="statement not covered" >          if (rmErr) {</span>
+<span class="cstat-no" title="statement not covered" >            reject(rmErr);</span>
+<span class="cstat-no" title="statement not covered" >            return;</span>
           }
 &nbsp;
-<span class="cstat-no" title="statement not covered">          git.clone(rUrl, dir, <span class="fstat-no" title="function not covered">function(cloneErr, repo) {</span></span>
-<span class="cstat-no" title="statement not covered">            if (cloneErr) {</span>
-<span class="cstat-no" title="statement not covered">              reject(cloneErr);</span>
-<span class="cstat-no" title="statement not covered">              return;</span>
+<span class="cstat-no" title="statement not covered" >          git.clone(rUrl, dir, <span class="fstat-no" title="function not covered" >function(cloneErr, repo) {</span></span>
+<span class="cstat-no" title="statement not covered" >            if (cloneErr) {</span>
+<span class="cstat-no" title="statement not covered" >              reject(cloneErr);</span>
+<span class="cstat-no" title="statement not covered" >              return;</span>
             }
-<span class="cstat-no" title="statement not covered">            initRepo(repo);</span>
+<span class="cstat-no" title="statement not covered" >            initRepo(repo);</span>
           });
         });
       }
 &nbsp;
       // assume that if there is a .git folder get its remoteUrl
       // and check if it mathces the one we want to use.
-<span class="cstat-no" title="statement not covered">      getRemoteUrl(git(dir), origin).then(<span class="fstat-no" title="function not covered">function(cwdRemoteUrl) {</span></span>
-<span class="cstat-no" title="statement not covered">        if (remoteUrl === cwdRemoteUrl) {</span>
-<span class="cstat-no" title="statement not covered">          initRepo(git(dir));</span>
-<span class="cstat-no" title="statement not covered">          return;</span>
+<span class="cstat-no" title="statement not covered" >      getRemoteUrl(git(dir), origin).then(<span class="fstat-no" title="function not covered" >function(cwdRemoteUrl) {</span></span>
+<span class="cstat-no" title="statement not covered" >        if (remoteUrl === cwdRemoteUrl) {</span>
+<span class="cstat-no" title="statement not covered" >          initRepo(git(dir));</span>
+<span class="cstat-no" title="statement not covered" >          return;</span>
         }
-<span class="cstat-no" title="statement not covered">        clearAndInitRepo();</span>
-      }, <span class="fstat-no" title="function not covered">function() {</span>
-<span class="cstat-no" title="statement not covered">        clearAndInitRepo();</span>
+<span class="cstat-no" title="statement not covered" >        clearAndInitRepo();</span>
+      }, <span class="fstat-no" title="function not covered" >function() {</span>
+<span class="cstat-no" title="statement not covered" >        clearAndInitRepo();</span>
       });
     });
   });
@@ -873,23 +875,23 @@ var wrapPromise = require('wrap-promise');
 /*
  * List Local branches
 **/
-<span class="fstat-no" title="function not covered">function listLocalBranches(repo) {</span>
-<span class="cstat-no" title="statement not covered">  return caller.call(repo, repo.branches).then(<span class="fstat-no" title="function not covered">function(branches) {</span></span>
-<span class="cstat-no" title="statement not covered">    return branches.map(<span class="fstat-no" title="function not covered">function(branch) {</span></span>
-<span class="cstat-no" title="statement not covered">      return branch.name;</span>
+<span class="fstat-no" title="function not covered" >function listLocalBranches(repo) {</span>
+<span class="cstat-no" title="statement not covered" >  return caller.call(repo, repo.branches).then(<span class="fstat-no" title="function not covered" >function(branches) {</span></span>
+<span class="cstat-no" title="statement not covered" >    return branches.map(<span class="fstat-no" title="function not covered" >function(branch) {</span></span>
+<span class="cstat-no" title="statement not covered" >      return branch.name;</span>
     });
   });
 }
 &nbsp;
-<span class="fstat-no" title="function not covered">function listRemoteBranches(repo) {</span>
-<span class="cstat-no" title="statement not covered">  return caller.call(repo, repo.git, 'branch', {r: true}, [])</span>
-  .then(<span class="fstat-no" title="function not covered">function(branches) {</span>
-<span class="cstat-no" title="statement not covered">    branches = branches.split('\n');</span>
-<span class="cstat-no" title="statement not covered">    branches.shift();</span>
-<span class="cstat-no" title="statement not covered">    branches.pop();</span>
-<span class="cstat-no" title="statement not covered">    return branches.map(<span class="fstat-no" title="function not covered">function(branchName) {</span></span>
-<span class="cstat-no" title="statement not covered">      branchName = branchName.trim();</span>
-<span class="cstat-no" title="statement not covered">      return branchName;</span>
+<span class="fstat-no" title="function not covered" >function listRemoteBranches(repo) {</span>
+<span class="cstat-no" title="statement not covered" >  return caller.call(repo, repo.git, 'branch', {r: true}, [])</span>
+  .then(<span class="fstat-no" title="function not covered" >function(branches) {</span>
+<span class="cstat-no" title="statement not covered" >    branches = branches.split('\n');</span>
+<span class="cstat-no" title="statement not covered" >    branches.shift();</span>
+<span class="cstat-no" title="statement not covered" >    branches.pop();</span>
+<span class="cstat-no" title="statement not covered" >    return branches.map(<span class="fstat-no" title="function not covered" >function(branchName) {</span></span>
+<span class="cstat-no" title="statement not covered" >      branchName = branchName.trim();</span>
+<span class="cstat-no" title="statement not covered" >      return branchName;</span>
     });
   });
 }
@@ -897,11 +899,11 @@ var wrapPromise = require('wrap-promise');
 /*
  * List commits for specific branch
 **/
-<span class="fstat-no" title="function not covered">function getCommits(repo, branchName) {</span>
-<span class="cstat-no" title="statement not covered">  return caller.call(repo, repo.commits, branchName)</span>
-  .then(<span class="fstat-no" title="function not covered">function(commits) {</span>
-<span class="cstat-no" title="statement not covered">    return commits.map(<span class="fstat-no" title="function not covered">function(commitObj) {</span></span>
-<span class="cstat-no" title="statement not covered">      return {</span>
+<span class="fstat-no" title="function not covered" >function getCommits(repo, branchName) {</span>
+<span class="cstat-no" title="statement not covered" >  return caller.call(repo, repo.commits, branchName)</span>
+  .then(<span class="fstat-no" title="function not covered" >function(commits) {</span>
+<span class="cstat-no" title="statement not covered" >    return commits.map(<span class="fstat-no" title="function not covered" >function(commitObj) {</span></span>
+<span class="cstat-no" title="statement not covered" >      return {</span>
         id: commitObj.id,
         message: commitObj.message,
         committed_date: commitObj.committed_date
@@ -917,28 +919,28 @@ Git.getRemoteUrl = getRemoteUrl;
  * Status
  * files - Array of String paths; or a String path.
 **/
-Git.prototype.status = <span class="fstat-no" title="function not covered">function() {</span>
-<span class="cstat-no" title="statement not covered">  var self = this;</span>
+Git.prototype.status = <span class="fstat-no" title="function not covered" >function() {</span>
+<span class="cstat-no" title="statement not covered" >  var self = this;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">  return wrapPromise(<span class="fstat-no" title="function not covered">function(resolve, reject) {</span></span>
-<span class="cstat-no" title="statement not covered">    self._repo.status(<span class="fstat-no" title="function not covered">function(err, repo) {</span></span>
-<span class="cstat-no" title="statement not covered">      if (err) {</span>
-<span class="cstat-no" title="statement not covered">        reject(err);</span>
-<span class="cstat-no" title="statement not covered">        return;</span>
+<span class="cstat-no" title="statement not covered" >  return wrapPromise(<span class="fstat-no" title="function not covered" >function(resolve, reject) {</span></span>
+<span class="cstat-no" title="statement not covered" >    self._repo.status(<span class="fstat-no" title="function not covered" >function(err, repo) {</span></span>
+<span class="cstat-no" title="statement not covered" >      if (err) {</span>
+<span class="cstat-no" title="statement not covered" >        reject(err);</span>
+<span class="cstat-no" title="statement not covered" >        return;</span>
       }
 &nbsp;
-<span class="cstat-no" title="statement not covered">      self._repo = repo.repo;</span>
-<span class="cstat-no" title="statement not covered">      self._staged = repo.files;</span>
-<span class="cstat-no" title="statement not covered">      wrapPromise.Promise.all([</span>
+<span class="cstat-no" title="statement not covered" >      self._repo = repo.repo;</span>
+<span class="cstat-no" title="statement not covered" >      self._staged = repo.files;</span>
+<span class="cstat-no" title="statement not covered" >      wrapPromise.Promise.all([</span>
         getCommits(self._repo, self._currentBranch),
         listRemoteBranches(self._repo),
         listLocalBranches(self._repo)
       ])
-      .then(<span class="fstat-no" title="function not covered">function(args) {</span>
-<span class="cstat-no" title="statement not covered">        self._remoteBranches = args[1];</span>
-<span class="cstat-no" title="statement not covered">        self._localBranches = args[2];</span>
-<span class="cstat-no" title="statement not covered">        self._commits = args[0];</span>
-<span class="cstat-no" title="statement not covered">        resolve(self);</span>
+      .then(<span class="fstat-no" title="function not covered" >function(args) {</span>
+<span class="cstat-no" title="statement not covered" >        self._remoteBranches = args[1];</span>
+<span class="cstat-no" title="statement not covered" >        self._localBranches = args[2];</span>
+<span class="cstat-no" title="statement not covered" >        self._commits = args[0];</span>
+<span class="cstat-no" title="statement not covered" >        resolve(self);</span>
       }, reject);
     });
   });
@@ -948,18 +950,18 @@ Git.prototype.status = <span class="fstat-no" title="function not covered">funct
  * Checkout a specific branch in a repo
  * @param name {String} -  String name of the branch.
 **/
-Git.prototype.checkoutBranch = <span class="fstat-no" title="function not covered">function(name) {</span>
-<span class="cstat-no" title="statement not covered">  var self = this;</span>
+Git.prototype.checkoutBranch = <span class="fstat-no" title="function not covered" >function(name) {</span>
+<span class="cstat-no" title="statement not covered" >  var self = this;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">  return wrapPromise(<span class="fstat-no" title="function not covered">function(resolve, reject) {</span></span>
-<span class="cstat-no" title="statement not covered">    self._repo.checkout(name, <span class="fstat-no" title="function not covered">function(err) {</span></span>
-<span class="cstat-no" title="statement not covered">      if (err) {</span>
-<span class="cstat-no" title="statement not covered">        reject(err);</span>
-<span class="cstat-no" title="statement not covered">        return;</span>
+<span class="cstat-no" title="statement not covered" >  return wrapPromise(<span class="fstat-no" title="function not covered" >function(resolve, reject) {</span></span>
+<span class="cstat-no" title="statement not covered" >    self._repo.checkout(name, <span class="fstat-no" title="function not covered" >function(err) {</span></span>
+<span class="cstat-no" title="statement not covered" >      if (err) {</span>
+<span class="cstat-no" title="statement not covered" >        reject(err);</span>
+<span class="cstat-no" title="statement not covered" >        return;</span>
       }
 &nbsp;
-<span class="cstat-no" title="statement not covered">      self._currentBranch = name;</span>
-<span class="cstat-no" title="statement not covered">      resolve(self.status());</span>
+<span class="cstat-no" title="statement not covered" >      self._currentBranch = name;</span>
+<span class="cstat-no" title="statement not covered" >      resolve(self.status());</span>
     });
   });
 };
@@ -968,16 +970,16 @@ Git.prototype.checkoutBranch = <span class="fstat-no" title="function not covere
  * Create a branch
  * @param name {String} -  String name of the new branch.
 **/
-Git.prototype.createBranch = <span class="fstat-no" title="function not covered">function(name) {</span>
-<span class="cstat-no" title="statement not covered">  var self = this;</span>
+Git.prototype.createBranch = <span class="fstat-no" title="function not covered" >function(name) {</span>
+<span class="cstat-no" title="statement not covered" >  var self = this;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">  return wrapPromise(<span class="fstat-no" title="function not covered">function(resolve, reject) {</span></span>
-<span class="cstat-no" title="statement not covered">    self._repo.create_branch(name, <span class="fstat-no" title="function not covered">function(err) {</span></span>
-<span class="cstat-no" title="statement not covered">      if (err) {</span>
-<span class="cstat-no" title="statement not covered">        reject(err);</span>
+<span class="cstat-no" title="statement not covered" >  return wrapPromise(<span class="fstat-no" title="function not covered" >function(resolve, reject) {</span></span>
+<span class="cstat-no" title="statement not covered" >    self._repo.create_branch(name, <span class="fstat-no" title="function not covered" >function(err) {</span></span>
+<span class="cstat-no" title="statement not covered" >      if (err) {</span>
+<span class="cstat-no" title="statement not covered" >        reject(err);</span>
       } else {
-<span class="cstat-no" title="statement not covered">        self._currentBranch = name;</span>
-<span class="cstat-no" title="statement not covered">        resolve(self.status());</span>
+<span class="cstat-no" title="statement not covered" >        self._currentBranch = name;</span>
+<span class="cstat-no" title="statement not covered" >        resolve(self.status());</span>
       }
     });
   });
@@ -987,37 +989,37 @@ Git.prototype.createBranch = <span class="fstat-no" title="function not covered"
  * Create and checkout a branch
  * @param name {String} -  String name of the new branch.
 **/
-Git.prototype.createAndCheckoutBranch = <span class="fstat-no" title="function not covered">function(name) {</span>
-<span class="cstat-no" title="statement not covered">  return this.createBranch(name)</span>
-  .then(<span class="fstat-no" title="function not covered">function(repo) {</span>
-<span class="cstat-no" title="statement not covered">    return repo.checkoutBranch(name);</span>
+Git.prototype.createAndCheckoutBranch = <span class="fstat-no" title="function not covered" >function(name) {</span>
+<span class="cstat-no" title="statement not covered" >  return this.createBranch(name)</span>
+  .then(<span class="fstat-no" title="function not covered" >function(repo) {</span>
+<span class="cstat-no" title="statement not covered" >    return repo.checkoutBranch(name);</span>
   });
 };
 &nbsp;
-Git.prototype.addFiles = <span class="fstat-no" title="function not covered">function(files, options) {</span>
-<span class="cstat-no" title="statement not covered">  var self = this;</span>
+Git.prototype.addFiles = <span class="fstat-no" title="function not covered" >function(files, options) {</span>
+<span class="cstat-no" title="statement not covered" >  var self = this;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">  return wrapPromise(<span class="fstat-no" title="function not covered">function(resolve, reject) {</span></span>
-<span class="cstat-no" title="statement not covered">    self._repo.add(files, options, <span class="fstat-no" title="function not covered">function(err) {</span></span>
-<span class="cstat-no" title="statement not covered">      if (err) {</span>
-<span class="cstat-no" title="statement not covered">        reject(err);</span>
-<span class="cstat-no" title="statement not covered">        return;</span>
+<span class="cstat-no" title="statement not covered" >  return wrapPromise(<span class="fstat-no" title="function not covered" >function(resolve, reject) {</span></span>
+<span class="cstat-no" title="statement not covered" >    self._repo.add(files, options, <span class="fstat-no" title="function not covered" >function(err) {</span></span>
+<span class="cstat-no" title="statement not covered" >      if (err) {</span>
+<span class="cstat-no" title="statement not covered" >        reject(err);</span>
+<span class="cstat-no" title="statement not covered" >        return;</span>
       }
 &nbsp;
-<span class="cstat-no" title="statement not covered">      resolve(self.status());</span>
+<span class="cstat-no" title="statement not covered" >      resolve(self.status());</span>
     });
   });
 };
 &nbsp;
-Git.prototype.commit = <span class="fstat-no" title="function not covered">function(commitMsg) {</span>
-<span class="cstat-no" title="statement not covered">  var self = this;</span>
+Git.prototype.commit = <span class="fstat-no" title="function not covered" >function(commitMsg) {</span>
+<span class="cstat-no" title="statement not covered" >  var self = this;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">  return wrapPromise(<span class="fstat-no" title="function not covered">function(resolve, reject) {</span></span>
-<span class="cstat-no" title="statement not covered">    self._repo.commit(commitMsg, {all: true}, <span class="fstat-no" title="function not covered">function(err) {</span></span>
-<span class="cstat-no" title="statement not covered">      if (err) {</span>
-<span class="cstat-no" title="statement not covered">        reject(err);</span>
+<span class="cstat-no" title="statement not covered" >  return wrapPromise(<span class="fstat-no" title="function not covered" >function(resolve, reject) {</span></span>
+<span class="cstat-no" title="statement not covered" >    self._repo.commit(commitMsg, {all: true}, <span class="fstat-no" title="function not covered" >function(err) {</span></span>
+<span class="cstat-no" title="statement not covered" >      if (err) {</span>
+<span class="cstat-no" title="statement not covered" >        reject(err);</span>
       } else {
-<span class="cstat-no" title="statement not covered">        resolve(self.status());</span>
+<span class="cstat-no" title="statement not covered" >        resolve(self.status());</span>
       }
     });
   });
@@ -1026,11 +1028,10 @@ Git.prototype.commit = <span class="fstat-no" title="function not covered">funct
 module.exports = Git;
 &nbsp;
 &nbsp;</pre></td></tr>
-</tbody></table></pre>
+</table></pre>
 </div>
 <div class="footer">
-    <div class="meta">Generated by <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a> at Tue Apr 11 2017 16:05:15 GMT+0000 (UTC)</div>
+    <div class="meta">Generated by <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a> at Mon Apr 17 2017 22:45:49 GMT+0000 (UTC)</div>
 </div>
-
-
-</body></html>
+</body>
+</html>
