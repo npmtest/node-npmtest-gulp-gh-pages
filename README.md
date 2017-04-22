@@ -1,4 +1,7 @@
-# test coverage for  [gulp-gh-pages (v0.5.4)](https://github.com/shinnn/gulp-gh-pages#readme)  [![npm package](https://img.shields.io/npm/v/npmtest-gulp-gh-pages.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-gulp-gh-pages) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-gulp-gh-pages.svg)](https://travis-ci.org/npmtest/node-npmtest-gulp-gh-pages)
+# npmtest-gulp-gh-pages
+
+#### basic test coverage for  [gulp-gh-pages (v0.5.4)](https://github.com/shinnn/gulp-gh-pages#readme)  [![npm package](https://img.shields.io/npm/v/npmtest-gulp-gh-pages.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-gulp-gh-pages) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-gulp-gh-pages.svg)](https://travis-ci.org/npmtest/node-npmtest-gulp-gh-pages)
+
 #### gulp plugin to publish contents to Github pages
 
 [![NPM](https://nodei.co/npm/gulp-gh-pages.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/gulp-gh-pages)
@@ -114,7 +117,8 @@
         "test": "mocha test.js --timeout 50000 --full-trace",
         "test-only": "mocha test.js --timeout 50000 --full-trace"
     },
-    "version": "0.5.4"
+    "version": "0.5.4",
+    "bin": {}
 }
 ```
 
